@@ -142,11 +142,11 @@ void LinkedList<T>::insertOrdered(const T& newData) {
   }
   // Lastly traverse the linked list and look for spot to insert the new data
   else {
-    Node* curr = head_; // create a pointer to track current location and start at head
+    Node* curr = head_->next; // create a pointer to track current location and start at 2nd node since head already checked
     
     bool inserted = false;
     while(!inserted) {
-      std::cout << "Checking " << newData << " vs " << curr->data << " and " << curr->next->data << std::endl;
+      std::cout << "Checking if " << curr->prev->data << " < " << newData << " < " << curr->data << std::endl;
       
       if(newData <= curr->data) {
         Node* newNode = new Node(newData);
@@ -162,12 +162,15 @@ void LinkedList<T>::insertOrdered(const T& newData) {
         
         size_++;  // increment size of linked list by 1 (ignored earlier since pushFront and pushBack already do it)
         inserted = true;
+        return;
       }
       else {
+        // no match found, move to next node
         curr = curr->next;
       }
     }
   }
+  return;
 }
 
 /********************************************************************
@@ -295,17 +298,39 @@ LinkedList<T> LinkedList<T>::merge(const LinkedList<T>& other) const {
   // and an int.)
   
   // BL: STARTED CODING HERE
+  std::cout << "**** MERGING ****" << std::endl;
   // confirm that both lists are sorted which is required for this to work properly
   if(!left.isSorted() || !right.isSorted() ) {
     std::cout << "Cannot merge unsorted lists. Ensure both are sorted first." << std::endl;
   }
+  //check if either left or right are empty
+  else if(left.empty() ) {
+    merged = right;
+  }
+  else if (right.empty() ) {
+    merged = left;
+  }
   else {
     while(left.size() + right.size() > 0) {
-      if (left.head_->data <= right.head_->data) {
+      // if left is empty
+      if (!left.head_) {
+        merged.pushBack(right.head_->data);
+        right.popFront();
+      }
+      // if right is empty
+      else if (!right.head_) {
+        merged.pushBack(left.head_->data);
+        left.popFront();
+      }
+      else if (left.head_->data <= right.head_->data) {
+        std::cout << "Checking left: " << left.head_->data << " vs right: " << right.head_->data << std::endl;
+        std::cout << "*Inserting left side: " << left.head_->data << std::endl;
         merged.pushBack(left.head_->data);
         left.popFront();
       }
       else {
+        std::cout << "Checking left: " << left.head_->data << " vs right: " << right.head_->data << std::endl;
+        std::cout << "*Inserting right side: " << right.head_->data << std::endl;
         merged.pushBack(right.head_->data);
         right.popFront();
       }
