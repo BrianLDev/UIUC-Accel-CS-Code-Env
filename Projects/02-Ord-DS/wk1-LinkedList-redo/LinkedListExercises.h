@@ -129,17 +129,45 @@ void LinkedList<T>::insertOrdered(const T& newData) {
 
   // BL: STARTED CODING HERE
   // first check if the list is empty and insert as head if it is
-  if(head_ == nulptr) {
+  if(head_ == nullptr) {
     pushFront(newData);
   }
-  // Now traverse the linked list and look for spot to insert the new data
-  Node* curr = head_ // create a pointer to track current location and start at head
-  if (newData <= curr->data) {
+  // Now check the first node to see if we can simply push to the front
+  else if (newData <= head_->data) {
     pushFront(newData);
   }
-  // now go through the rest
-  
-
+  // Next check the last node to see if we can simply push to the back
+  else if (newData >= tail_->data) {
+    pushBack(newData);
+  }
+  // Lastly traverse the linked list and look for spot to insert the new data
+  else {
+    Node* curr = head_; // create a pointer to track current location and start at head
+    
+    bool inserted = false;
+    while(!inserted) {
+      std::cout << "Checking " << newData << " vs " << curr->data << " and " << curr->next->data << std::endl;
+      
+      if(newData <= curr->data) {
+        Node* newNode = new Node(newData);
+        // insert new node between curr->prev and curr, add links
+        std::cout << "*Inserting " << newData << " between " << curr->prev->data << " and " << curr->data << std::endl;
+        newNode->prev = curr->prev;
+        newNode->next = curr;
+        // update old next link on tail side
+        curr->prev = newNode;
+        // update old prev link on tail side
+        curr = newNode->prev;
+        curr->next = newNode;
+        
+        size_++;  // increment size of linked list by 1 (ignored earlier since pushFront and pushBack already do it)
+        inserted = true;
+      }
+      else {
+        curr = curr->next;
+      }
+    }
+  }
 }
 
 /********************************************************************
@@ -265,6 +293,25 @@ LinkedList<T> LinkedList<T>::merge(const LinkedList<T>& other) const {
   // notice that all of our nodes are created on the heap? The part of the
   // list that we pass back is really small; it just contains two pointers
   // and an int.)
+  
+  // BL: STARTED CODING HERE
+  // confirm that both lists are sorted which is required for this to work properly
+  if(!left.isSorted() || !right.isSorted() ) {
+    std::cout << "Cannot merge unsorted lists. Ensure both are sorted first." << std::endl;
+  }
+  else {
+    while(left.size() + right.size() > 0) {
+      if (left.head_->data <= right.head_->data) {
+        merged.pushBack(left.head_->data);
+        left.popFront();
+      }
+      else {
+        merged.pushBack(right.head_->data);
+        right.popFront();
+      }
+    }
+  }
+  
   return merged;
 }
 
