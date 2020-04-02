@@ -93,13 +93,13 @@ static void treeFactory(GenericTree<int>& tree) {
   //      *****************************************************
 
   // BL: Started coding here
-  GenericTree<int> tf;
-  tf.createRoot(4);  // add root node
-  tf.getRootPtr()->addChild(8);  // addChild pushes new on the right side so start with left
-  tf.getRootPtr()->addChild(15);
-  tf.getRootPtr()->childrenPtrs[0]->addChild(16);
-  tf.getRootPtr()->childrenPtrs[0]->addChild(23);
-  tf.getRootPtr()->childrenPtrs[0]->childrenPtrs[0]->addChild(42);
+  tree.clear();   // get rid of any old data in tree
+  tree.createRoot(4);  // add root node
+  tree.getRootPtr()->addChild(8);  // addChild pushes new on the right side so start with left
+  tree.getRootPtr()->addChild(15);
+  tree.getRootPtr()->childrenPtrs[0]->addChild(16);
+  tree.getRootPtr()->childrenPtrs[0]->addChild(23);
+  tree.getRootPtr()->childrenPtrs[0]->childrenPtrs[0]->addChild(42);
 }
 
 // treeFactoryTest: This function demonstrates the execution of treeFactory
