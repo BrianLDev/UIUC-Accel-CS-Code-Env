@@ -51,11 +51,19 @@
 // makeWordCounts: Given a vector of (non-unique) strings, returns a
 // StringIntMap where each string is mapped to its number of occurences.
 StringIntMap makeWordCounts(const StringVec& words) {
-  StringIntMap wordcount_map;
+  StringIntMap wordcount_map;   // BL: This is an unordered map with key:pair of <std::string, int>
 
   // =================================================
   // EXERCISE 1 WORKSPACE: YOUR CODE HERE
   // =================================================
+  
+  // BL: Started coding here
+  // Note - this word count example would be better and easier to do with a Dictionary
+  // but will do it as unordered map for this exercise. (maybe Dictionaries are unordered maps?)
+  
+  for (std::string word : words) {
+    wordcount_map[word] += 1;
+  }
 
   return wordcount_map;
 }
