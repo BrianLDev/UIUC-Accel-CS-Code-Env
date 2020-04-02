@@ -122,7 +122,7 @@ public:
 
   // Returns true if the list is empty. This assumes that the head_ pointer
   // is accurately being maintained by the member functions.
-  bool empty() const { return !head_; }
+  bool empty() const { return !head_; } // BL: i.e. head = null
 
   // Returns a reference to the actual front data item in the list.
   // This can be used to directly change the data in that node.
@@ -177,9 +177,9 @@ public:
   // Push a copy of the new data item onto the back of the list.
   void pushBack(const T& newData);
   // Delete the front item of the list.
-  void popFront();
+  void popFront();  // BL: isn't pop supposed to return the object as well as deleting it?
   // Delete the back item of the list.
-  void popBack();
+  void popBack();  // BL: isn't pop supposed to return the object as well as deleting it?
   
   // Delete all items in the list, leaving it empty.
   void clear() {

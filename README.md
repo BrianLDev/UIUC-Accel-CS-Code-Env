@@ -14,3 +14,6 @@ Additional work done after as part of test prep.
 ## [Projects](https://github.com/BrianLeip/UIUC-Accel-CS-Code-Env/tree/master/Projects)
 These are the various projects done for the 3 certification courses, originally completed Oct / Nov 2019.  
 Additional work done Apr 2020 as part of test prep. 
+
+## [Practice]()
+This is practice code created from scratch to gain a deeper understanding of each topic, and C++ syntax with fewer starting prompts.  

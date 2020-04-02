@@ -80,7 +80,6 @@
 
 template <typename T>
 void LinkedList<T>::insertOrdered(const T& newData) {
-
   // -----------------------------------------------------------
   // TODO: Your code here!
   // -----------------------------------------------------------
@@ -127,6 +126,9 @@ void LinkedList<T>::insertOrdered(const T& newData) {
   // they don't handle the null pointer at the tail properly. Be careful
   // to update all next, prev, head_, and tail_ pointers as needed on your
   // new node or on those existing nodes that are adjacent to the new node.
+
+  // BL: STARTED CODING HERE
+  
 
 }
 
