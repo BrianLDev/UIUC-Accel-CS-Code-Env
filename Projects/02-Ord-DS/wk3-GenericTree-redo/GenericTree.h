@@ -93,6 +93,7 @@ public:
     ~TreeNode() {}
 
   };
+  // BL: ***** End of TreeNode, back to GenericTree *****
 
 private:
   // The tree has this pointer to its root node as an entry point,

@@ -92,12 +92,14 @@ static void treeFactory(GenericTree<int>& tree) {
   //    TODO: Your work here! You should edit this function body!
   //      *****************************************************
 
-  // Edit the function body only. You should leave the function header alone.
-  // Build the contents of tree so that it matches the diagram above
-  // when you print it out. The main() function runs that test for you.
-
-  // ...
-
+  // BL: Started coding here
+  GenericTree<int> tf;
+  tf.createRoot(4);  // add root node
+  tf.getRootPtr()->addChild(8);  // addChild pushes new on the right side so start with left
+  tf.getRootPtr()->addChild(15);
+  tf.getRootPtr()->childrenPtrs[0]->addChild(16);
+  tf.getRootPtr()->childrenPtrs[0]->addChild(23);
+  tf.getRootPtr()->childrenPtrs[0]->childrenPtrs[0]->addChild(42);
 }
 
 // treeFactoryTest: This function demonstrates the execution of treeFactory
