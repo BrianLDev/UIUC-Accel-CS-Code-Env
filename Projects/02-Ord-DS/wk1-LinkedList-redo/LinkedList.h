@@ -71,7 +71,7 @@ public:
     // automatically called afterward.
     ~Node() {}
 
-  };
+  };  // BL: End of Node sub-class, back to LinkedList class
 
 private:
 

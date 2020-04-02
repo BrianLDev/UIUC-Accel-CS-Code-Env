@@ -128,7 +128,16 @@ void LinkedList<T>::insertOrdered(const T& newData) {
   // new node or on those existing nodes that are adjacent to the new node.
 
   // BL: STARTED CODING HERE
-  
+  // first check if the list is empty and insert as head if it is
+  if(head_ == nulptr) {
+    pushFront(newData);
+  }
+  // Now traverse the linked list and look for spot to insert the new data
+  Node* curr = head_ // create a pointer to track current location and start at head
+  if (newData <= curr->data) {
+    pushFront(newData);
+  }
+  // now go through the rest
   
 
 }
