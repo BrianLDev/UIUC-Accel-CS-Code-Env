@@ -52,6 +52,13 @@ int GridGraph::countEdges() const {
   // =======================================================================
   // TODO: Your code here!
   // =======================================================================
+  
+  // BL: Started code here
+  #include <queue>
+  std::queue<IntPair*> q;
+  for (IntPair coord : adjacencyMap) {
+    // BL: STOPPED HERE.  FOCUS ON COURSE VIDEOS AND PRACTICE WITH REMAINING HOUR BEFORE TEST
+  }
 
   return numEdges;
 }
