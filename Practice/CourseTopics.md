@@ -46,9 +46,66 @@ intPtr = &num;
     - Can be wasteful to duplicate memory, and changes will not affect the original variable if that is needed in the situation
     - Fine for most cases when the variable doesn't take up much memory and/or you don't need to modify the original
 - Passing by reference
-    - 
+    - passes the original variable into/out of the function
+    - Saves memory and allows you to modify original
+    - Can be harmful if you want to keep original intact
+
+**Constructors and Destructors**
+- [Add notes here]
+
+**Templates**
+- [Add notes here]
+
+**Inheritance**
+- [Add notes here]
+
 
 ## Ordered Data Structures
+**Arrays**
+- [Add notes here]
+
+**Linked Lists**
+- [Add notes here]
+
+**Big O and run-time analysis**
+- [Add notes here]
+
+**Vector**
+- [Add notes here]
+
+**Queue**
+- [Add notes here]
+
+**Stack**
+- [Add notes here]
+
+**Binary Trees**
+- [Add notes here]
+
+**Tree Traversals**
+- [Add notes here]
+
+**Binary Search Trees**
+- [Add notes here]
+
+**Balanced Binary Search Trees**
+- [Add notes here]
+
+**AVL Trees**
+- [Add notes here]
+
+**B-Trees**
+- [Add notes here]
+
+**Generic Trees**
+- [Add notes here]
+
+**Tree Traversals**
+- [Add notes here]
+
+**Heap Data Structure**  
+- [Add notes here]
+
 
 
 ## UnOrdered Data Structures
