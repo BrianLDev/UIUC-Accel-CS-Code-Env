@@ -1,5 +1,5 @@
 # Course Topics from Accel CS Fundamentals Certification
-Feinman Method
+## Usint the Feinman Method
 1. Write out course topics, theory, etc from memory.  As if you were teaching it.  
 2. Fill in gaps in knowledge that appear.    
 3. Repeat. 
@@ -128,7 +128,11 @@ intPtr = &num;
 - [Add notes here]
 
 **Kruskal's Algorithm**
-- [Add notes here]
+- In a graph, every edge has weights on them (e.g. lenth between nodes)
+- Create a list (heap) of all edges with the min at the top
+- Also have disjoint set of all connected elements
+    - Do not add edges that would create a cycle
+- This creates a spanning tree where you can reach all nodes starting at one node
 
 **Prim's Algorithm**
 - [Add notes here]
