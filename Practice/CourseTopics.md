@@ -109,3 +109,32 @@ intPtr = &num;
 
 
 ## UnOrdered Data Structures
+**Hashing**
+- [Add notes here]
+
+**map and unordered_map**
+- [Add notes here]
+
+**Disjoint Sets**  
+- [Add notes here]
+
+**Graph Data Structures**  
+- [Add notes here]
+
+**Graph Traversals**
+- [Add notes here]
+
+**Minimum Spanning Trees**
+- [Add notes here]
+
+**Kruskal's Algorithm**
+- [Add notes here]
+
+**Prim's Algorithm**
+- [Add notes here]
+
+**Dijkstra's Algorithm**
+- [Add notes here]
+
+**Landmark Path Problem**
+- [Add notes here]
