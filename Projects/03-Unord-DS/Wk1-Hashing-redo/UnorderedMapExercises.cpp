@@ -58,8 +58,7 @@ StringIntMap makeWordCounts(const StringVec& words) {
   // =================================================
   
   // BL: Started coding here
-  // Note - this word count example would be better and easier to do with a Dictionary
-  // but will do it as unordered map for this exercise. (maybe Dictionaries are unordered maps?)
+  // BL Note - unordered_map is the same as Dictionaries in other languages. Key/value pairs.
   
   for (std::string word : words) {
     wordcount_map[word] += 1;
@@ -110,14 +109,12 @@ int lookupWithFallback(const StringIntMap& wordcount_map, const std::string& key
   // =================================================
 
   // BL: Started coding here
-  try {
+  if(wordcount_map.count(key))
     return wordcount_map.at(key);
-  }
-  catch {
+  
+  else
     return fallbackVal;
-  }
 }
-
 
 
 // =========================================================================
@@ -194,7 +191,7 @@ int memoizedLongestPalindromeLength(LengthMemo& memo, const std::string& str, in
   // Apart from that, in the following code, the std::string::at() function
   // will throw an exception if an index is out of bounds.
 
-  if (false) {
+  if (false) {  // BL: what the hell is this?  if(false) will never run
     // Debugging spam messages
     int range = rightLimit-leftLimit+1;
     if (range < 0) range = 0;
@@ -227,9 +224,10 @@ int memoizedLongestPalindromeLength(LengthMemo& memo, const std::string& str, in
     // for it in the memoization table already. We won't calculate anything
     // new in this case. So, we also won't store anything new in the table in
     // this case, only return what's already stored at this key in the map.
-
-    return -1337; // Hint: You need to change this!
     // ====================================================================
+    
+    // BL: Started coding here
+    return memo[pairKey];
 
   }
 
@@ -335,7 +333,10 @@ int memoizedLongestPalindromeLength(LengthMemo& memo, const std::string& str, in
   // =======================================================================
   // EXERCISE 3 - PART B - YOUR CODE HERE!
   //
-  return -1337; // Hint: You need to change this!
   // =======================================================================
+  
+  // BL: Started Coding here
+  memo[pairKey] = greaterResult;
+  return greaterResult;
 }
 
